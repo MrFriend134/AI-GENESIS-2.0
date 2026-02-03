@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI GENESIS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>AI GENESIS</h1>
+      <button id="openSettingsBtn">Settings</button>
+    </header>
+
+    <main class="main">
+      <section class="chat">
+        <div id="messageList" class="message-list"></div>
+        <form id="composerForm" class="composer">
+          <textarea id="messageInput" placeholder="Type your message..." rows="1"></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <div id="settingsModal" class="modal" style="display:none;">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <header class="modal-header">
+        <h2>Settings</h2>
+        <button id="closeSettingsBtn" class="close-btn">&times;</button>
+      </header>
+      <div class="modal-body">
+        <label class="field">
+          <span>Google API Key</span>
+          <input id="apiKeyInput" type="password" placeholder="AIza...">
+        </label>
+        <label class="field">
+          <span>Temperature</span>
+          <input id="temperatureInput" type="range" min="0" max="1" step="0.05" value="0.4">
+          <span id="temperatureOut">0.40</span>
+        </label>
+        <label class="field">
+          <span>Max Tokens</span>
+          <input id="maxTokensInput" type="range" min="64" max="2048" step="32" value="512">
+          <span id="maxTokensOut">512</span>
+        </label>
+        <button id="saveSettingsBtn" class="primary-btn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastRegion" class="toast-region"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
